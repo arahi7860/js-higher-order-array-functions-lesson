@@ -43,8 +43,6 @@ arr.forEach(function(element) {
 4. Use a for loop, a for..of loop, and the forEach method to print out only numbers greater than 3
 5. Use a for loop, a for..of loop, and the forEach method to add up all the numbers and print out the result
 
-![alt text](mfr.jpg)
-
 
 ## Map
 
