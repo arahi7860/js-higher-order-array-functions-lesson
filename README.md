@@ -3,7 +3,7 @@
 # Map, Filter, Reduce
 
 
-# Refresh: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
+# Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
@@ -13,17 +13,8 @@ for (let i = 0; i < arr.length; i++) {
 }
 ```
 
-## [For...of loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-
-- The for...of loop allows you to iterate over arrays with a cleaner syntax.
-
-```javascript
-const arr = [1, 2, 3, 4, 5];
-
-for (let value of arr) {
-  console.log(value);
-}
-```
+In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
+Higher Order Functions are functions that pass a function as an argument or return a function as a value.
 
 ## [The Array forEach method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
