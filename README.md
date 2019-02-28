@@ -8,10 +8,10 @@ Higher Order Functions are functions that pass a function as an argument or retu
 # Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
 ```javascript
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 for (let i = 0; i < numbers.length; i++) {
-  console.log(numbers[i]);
+  console.log(numbers[i])
 }
 ```
 
@@ -20,11 +20,11 @@ for (let i = 0; i < numbers.length; i++) {
 - You can call the forEach method on any array and pass it a function to execute on each item in the array.
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
-arr.forEach(function(element) {
+numbers.forEach(function(element) {
   console.log(element);
-});
+})
 ```
 
 ## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
@@ -32,17 +32,17 @@ arr.forEach(function(element) {
 `.map()` will take an array, and produce a new array with new values. In a function you define what each value in the array should be based on an existing item.
 
 ```js
-const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
-const wordLengths = words.map(function(word) { return word.length });
-// wordLengths = [ 3, 5, 2, 5, 4, 2, 6 ];
+const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+const wordLengths = words.map(function(word) { return word.length })
+// wordLengths = [ 3, 5, 2, 5, 4, 2, 6 ]
 ```
 
 ```js
-const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
+const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
 const wordsWrappedInX = words.map(function(word) { 
-  const newWord = 'x' + word + 'x';
-  return newWord;
-});
+  const newWord = 'x' + word + 'x'
+  return newWord
+})
 // wordLengths = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
 ```
 
@@ -51,16 +51,16 @@ const wordsWrappedInX = words.map(function(word) {
 `.filter()` will take an array, and produce a new array that only contains some of the items. Each item in the array runs through a function. If the function returns true, the item is included in the new array.
 
 ```js
-const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
-const shortWords = words.filter(function(word) { return word.length <= 3 });
-// shortWords = [ 'the', 'is', 'an' ];
+const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+const shortWords = words.filter(function(word) { return word.length <= 3 })
+// shortWords = [ 'the', 'is', 'an' ]
 ```
 
 
 ```js
-const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
-const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r' });
-// wordsThatStartWithR = ['round'];
+const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r' })
+// wordsThatStartWithR = ['round']
 ```
 
 
@@ -68,11 +68,12 @@ const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r'
 - The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
-const newArr = arr.reduce(function(accumulator, value) {
-  return accumulator + value;
-}, 0);
+const sum = numbers.reduce(function(accumulator, value) {
+  return accumulator + value
+}, 0)
+console.log(sum)
 ```
 
 __NOTE__ The single value returned can be an object or array. Often in examples it's a number or string but you can return anything. Reduce is extremely powerful and all other iterators can be written using it. It's tough to wrap one's mind around so don't worry if this one is inscrutable for now. We'll revisit it now and again...and again and again.
@@ -82,33 +83,36 @@ __NOTE__ The single value returned can be an object or array. Often in examples 
 - When using these array methods we can method chain. So instead of doing:
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
-const newArr = arr.map(function(element) {
+const mappedNumbers = numbers.map(function(element) {
   return element + 1;
 });
 
-const newerArr = newArr.filter(function(element) {
+const filteredNumbers = mappedNumbers.filter(function(element) {
   return element % 2 === 0;
 });
+
+console.log(filteredNumbers)
 ```
 
 We can do:
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
-const newArr = arr.map(function(element) {
+const filteredAndMappedNumbers = numbers.map(function(element) {
   return element + 1;
 }).filter(function(element) {
   return element % 2 === 0;
 });
+console.log(filteredAndMappedNumbers)
 ```
 
 Furthermore, we don't have to inline the anonymous functions, we can declare them elsewhere:
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
 const add1 = function(num) {
   return num + 1;
@@ -118,7 +122,9 @@ const isEven = function(num) {
   return num % 2 === 0;
 }
 
-const newArr = arr.map(add1).filter(isEven);
+const result = numbers.map(add1).filter(isEven);
+
+console.log(result)
 ```
 
 ### Bonus Challenge
