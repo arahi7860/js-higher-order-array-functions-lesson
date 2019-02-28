@@ -1,7 +1,9 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  WEB DEVELOPMENT IMMERSIVE
 
-# Map, Filter, Reduce
+# Higher Order Functions
 
+In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
+Higher Order Functions are functions that pass a function as an argument or return a function as a value.
 
 # Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
@@ -12,9 +14,6 @@ for (let i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 ```
-
-In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
-Higher Order Functions are functions that pass a function as an argument or return a function as a value.
 
 ## [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
