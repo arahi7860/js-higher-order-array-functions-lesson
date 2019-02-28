@@ -46,7 +46,7 @@ const wordsWrappedInX = words.map(function(word) {
 // wordLengths = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
 ```
 
-## Filter
+## [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 `.filter()` will take an array, and produce a new array that only contains some of the items. Each item in the array runs through a function. If the function returns true, the item is included in the new array.
 
@@ -64,7 +64,7 @@ const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r'
 ```
 
 
-## [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+## [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 - The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
 
 ```javascript
