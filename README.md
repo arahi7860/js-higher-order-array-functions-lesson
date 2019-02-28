@@ -16,9 +16,9 @@ for (let i = 0; i < arr.length; i++) {
 In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
 Higher Order Functions are functions that pass a function as an argument or return a function as a value.
 
-## [The Array forEach method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+## [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
-- You can call the forEach method on any array and pass it a callback function to execute on each item in the array.
+- You can call the forEach method on any array and pass it a function to execute on each item in the array.
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
@@ -28,9 +28,9 @@ arr.forEach(function(element) {
 });
 ```
 
-## Map
+## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
-`.map()` will take an array, and produce a new array with new values. In an anonymous function, you define what each value in the array should be based on an existing item.
+`.map()` will take an array, and produce a new array with new values. In a function you define what each value in the array should be based on an existing item.
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
@@ -111,11 +111,11 @@ Furthermore, we don't have to inline the anonymous functions, we can declare the
 ```javascript
 const arr = [1, 2, 3, 4, 5];
 
-function add1(num) {
+const add1 = function(num) {
   return num + 1;
 }
 
-function isEven(num) {
+const isEven = function(num) {
   return num % 2 === 0;
 }
 
