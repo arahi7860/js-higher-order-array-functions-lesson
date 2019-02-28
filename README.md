@@ -37,15 +37,6 @@ arr.forEach(function(element) {
 });
 ```
 
-### Mini lab
-
-1. Visit the array forEach MDN or w3 school and explain how we might access the _index_ of the current element.
-2. What else can we optionally access?
-3. Use a for loop, a for..of loop, and the forEach method to print out each number in arr multiplied by 100
-4. Use a for loop, a for..of loop, and the forEach method to print out only numbers greater than 3
-5. Use a for loop, a for..of loop, and the forEach method to add up all the numbers and print out the result
-
-
 ## Map
 
 `.map()` will take an array, and produce a new array with new values. In an anonymous function, you define what each value in the array should be based on an existing item.
@@ -72,7 +63,7 @@ const wordsWrappedInX = words.map(function(word) {
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange'];
 const shortWords = words.filter(function(word) { return word.length <= 3 });
-// shortWords = [ 'the', 'is', 'round', 'an' ];
+// shortWords = [ 'the', 'is', 'an' ];
 ```
 
 
@@ -84,7 +75,7 @@ const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r'
 
 
 ## Reduce
-- "The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value."
+- The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
