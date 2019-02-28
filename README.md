@@ -64,7 +64,7 @@ const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r'
 ```
 
 
-## Reduce
+## [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
 
 ```javascript
