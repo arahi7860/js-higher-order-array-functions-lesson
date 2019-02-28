@@ -8,10 +8,10 @@ Higher Order Functions are functions that pass a function as an argument or retu
 # Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
 ```javascript
-const arr = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
 }
 ```
 
