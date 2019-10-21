@@ -43,7 +43,7 @@ const wordsWrappedInX = words.map(function(word) {
   const newWord = 'x' + word + 'x'
   return newWord
 })
-// wordWrappedInX = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
+// wordsWrappedInX = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
 ```
 
 ## [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
