@@ -136,24 +136,4 @@ console.log(result)
 Write your own `map` and `filter` using only `reduce` (i.e. no for loops)
 
 
-## Exercises
 
-Work through each exercise in the `exercises` folder. 
-
-As you edit code, run them with `node 1.js`.
-
-## Try watch when working on your exercises
-
-Try using the `watch` command, to keep a terminal process open that will automatically rerun your code!
-
-Install it with brew:
-
-```bash
-brew install watch
-```
-
-This command re-runs an exercise every 0.3 seconds:
-
-```bash
-watch -n 0.3 node 1.js
-```
