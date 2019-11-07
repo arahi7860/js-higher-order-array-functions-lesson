@@ -5,6 +5,10 @@
 In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
 Higher Order Functions are functions that pass a function as an argument or return a function as a value.
 
+### With food first!
+
+![map, filter, reduce with emoji](https://i.redd.it/yf7rw3pjiapx.jpg)
+
 # Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
 ```javascript
