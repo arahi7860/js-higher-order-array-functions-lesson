@@ -17,6 +17,7 @@ const numbers = [1, 2, 3, 4, 5]
 for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i])
 }
+// 1 2 3 4 5
 ```
 
 ## [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
@@ -29,6 +30,7 @@ const numbers = [1, 2, 3, 4, 5]
 numbers.forEach((element) => {
   console.log(element);
 })
+// 1 2 3 4 5
 ```
 
 ## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
