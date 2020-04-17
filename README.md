@@ -37,12 +37,14 @@ numbers.forEach((element) => {
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+
 const wordLengths = words.map((word) => { return word.length })
 // wordLengths = [ 3, 5, 2, 5, 4, 2, 6 ]
 ```
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+
 const wordsWrappedInX = words.map((word) => { 
   const newWord = 'x' + word + 'x'
   return newWord
@@ -56,6 +58,7 @@ const wordsWrappedInX = words.map((word) => {
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+
 const shortWords = words.filter((word) => { return word.length <= 3 })
 // shortWords = [ 'the', 'is', 'an' ]
 ```
@@ -63,6 +66,7 @@ const shortWords = words.filter((word) => { return word.length <= 3 })
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
+
 const wordsThatStartWithR = words.filter((word) => { return word[0] === 'r' })
 // wordsThatStartWithR = ['round']
 ```
