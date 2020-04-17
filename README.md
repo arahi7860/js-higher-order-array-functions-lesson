@@ -17,6 +17,7 @@ const numbers = [1, 2, 3, 4, 5]
 for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i])
 }
+// 1 2 3 4 5
 ```
 
 ## [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
@@ -26,9 +27,10 @@ for (let i = 0; i < numbers.length; i++) {
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
 
-numbers.forEach(function(element) {
+numbers.forEach((element) => {
   console.log(element);
 })
+// 1 2 3 4 5
 ```
 
 ## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
@@ -37,13 +39,15 @@ numbers.forEach(function(element) {
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
-const wordLengths = words.map(function(word) { return word.length })
+
+const wordLengths = words.map((word) => { return word.length })
 // wordLengths = [ 3, 5, 2, 5, 4, 2, 6 ]
 ```
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
-const wordsWrappedInX = words.map(function(word) { 
+
+const wordsWrappedInX = words.map((word) => { 
   const newWord = 'x' + word + 'x'
   return newWord
 })
@@ -56,14 +60,16 @@ const wordsWrappedInX = words.map(function(word) {
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
-const shortWords = words.filter(function(word) { return word.length <= 3 })
+
+const shortWords = words.filter((word) => { return word.length <= 3 })
 // shortWords = [ 'the', 'is', 'an' ]
 ```
 
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
-const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r' })
+
+const wordsThatStartWithR = words.filter((word) => { return word[0] === 'r' })
 // wordsThatStartWithR = ['round']
 ```
 
@@ -74,10 +80,11 @@ const wordsThatStartWithR = words.filter(function(word) { return word[0] === 'r'
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
 
-const sum = numbers.reduce(function(accumulator, value) {
+const sum = numbers.reduce((accumulator, value) => {
   return accumulator + value
 }, 0)
 console.log(sum)
+// 15
 ```
 
 __NOTE__ The single value returned can be an object or array. Often in examples it's a number or string but you can return anything. Reduce is extremely powerful and all other iterators can be written using it. It's tough to wrap one's mind around so don't worry if this one is inscrutable for now. We'll revisit it now and again...and again and again.
@@ -89,15 +96,19 @@ __NOTE__ The single value returned can be an object or array. Often in examples 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
 
-const mappedNumbers = numbers.map(function(element) {
+const mappedNumbers = numbers.map((element) => {
   return element + 1;
 });
 
-const filteredNumbers = mappedNumbers.filter(function(element) {
+console.log(mappedNumbers)
+// [ 2, 3, 4, 5, 6 ]
+
+const filteredNumbers = mappedNumbers.filter((element) => {
   return element % 2 === 0;
 });
 
 console.log(filteredNumbers)
+// [ 2, 4, 6 ]
 ```
 
 We can do:
@@ -105,12 +116,13 @@ We can do:
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
 
-const filteredAndMappedNumbers = numbers.map(function(element) {
+const filteredAndMappedNumbers = numbers.map((element) => {
   return element + 1;
-}).filter(function(element) {
+}).filter((element) => {
   return element % 2 === 0;
 });
 console.log(filteredAndMappedNumbers)
+[ 2, 4, 6 ]
 ```
 
 Furthermore, we don't have to inline the anonymous functions, we can declare them elsewhere:
@@ -118,17 +130,18 @@ Furthermore, we don't have to inline the anonymous functions, we can declare the
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
 
-const add1 = function(num) {
+const add1 = (num) => {
   return num + 1;
 }
 
-const isEven = function(num) {
+const isEven = (num) => {
   return num % 2 === 0;
 }
 
 const result = numbers.map(add1).filter(isEven);
 
 console.log(result)
+[ 2, 4, 6 ]
 ```
 
 ### Bonus Challenge
