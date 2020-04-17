@@ -84,6 +84,7 @@ const sum = numbers.reduce((accumulator, value) => {
   return accumulator + value
 }, 0)
 console.log(sum)
+// 15
 ```
 
 __NOTE__ The single value returned can be an object or array. Often in examples it's a number or string but you can return anything. Reduce is extremely powerful and all other iterators can be written using it. It's tough to wrap one's mind around so don't worry if this one is inscrutable for now. We'll revisit it now and again...and again and again.
@@ -99,11 +100,15 @@ const mappedNumbers = numbers.map((element) => {
   return element + 1;
 });
 
+console.log(mappedNumbers)
+// [ 2, 3, 4, 5, 6 ]
+
 const filteredNumbers = mappedNumbers.filter((element) => {
   return element % 2 === 0;
 });
 
 console.log(filteredNumbers)
+// [ 2, 4, 6 ]
 ```
 
 We can do:
@@ -117,6 +122,7 @@ const filteredAndMappedNumbers = numbers.map((element) => {
   return element % 2 === 0;
 });
 console.log(filteredAndMappedNumbers)
+[ 2, 4, 6 ]
 ```
 
 Furthermore, we don't have to inline the anonymous functions, we can declare them elsewhere:
@@ -135,6 +141,7 @@ const isEven = (num) => {
 const result = numbers.map(add1).filter(isEven);
 
 console.log(result)
+[ 2, 4, 6 ]
 ```
 
 ### Bonus Challenge
