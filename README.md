@@ -2,16 +2,56 @@
 
 # Higher Order Functions
 
-In JavaScript, functions are first-class citiziens, which means, we can pass functions around like values. 
-Higher Order Functions are functions that pass a function as an argument or return a function as a value.
+## Objectives
+
+1. Explain what a Higher order function in JavaScript is.
+2. Recap at the parts of a for loop
+3. Talk about built-in JS Higher Order Array methods
 
 ### With food first!
 
 ![map, filter, reduce with emoji](https://i.redd.it/yf7rw3pjiapx.jpg)
 
-# Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
-```javascript
+## What it is
+
+In JavaScript, functions are first-class citizens, which means we can pass functions around as values. Higher Order Functions pass a function as an argument or return a function as a value.
+
+A Higher-Order function is a function that receives a function as an argument or returns the function as output.
+
+*Examples*
+
+```JS
+// returns a function as output
+function prefixString(prefix){
+  return function(string){
+    return `${prefix}${string}`
+  }
+}
+
+let withDollarSign = prefixString('$');
+let jobApplication = prefixString('Netflix ')
+```
+
+The above example will take a prefix to a string and will return a function that allows us to prefix any string with the prefix that we provided.
+
+```JS
+// accepts a function as an argument
+document.addEventListener('click', ()=> {
+  alert('Clicked This page!')
+});
+```
+
+Used very often in DOM manipulation, the addEventListener function takes an action to listen for as the first argument and a function for the second argument.
+
+You will use many different types of Higher Order Functions, but today, we will focus on the built-in Array callback methods.
+
+
+
+## Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
+
+
+```Js
 const numbers = [1, 2, 3, 4, 5]
 
 for (let i = 0; i < numbers.length; i++) {
@@ -22,7 +62,8 @@ for (let i = 0; i < numbers.length; i++) {
 
 ## [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
-- You can call the forEach method on any array and pass it a function to execute on each item in the array.
+
+- The forEach() method executes a provided function once for each array element.
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
@@ -33,9 +74,24 @@ numbers.forEach((element) => {
 // 1 2 3 4 5
 ```
 
+### Building JS forEach from scratch
+
+Looking at the forEach() method, it may seem like a lot is going on behind the scenes, but in reality, the code is not all that complex.
+
+```JS
+let numbers = [1,2,3,4,5];
+
+Array.prototype.loop = function(callback){
+  for(let i = 0; i < this.length; i++){
+    callback(this[i], i, this);
+  }
+}
+
+numbers.loop((item, i) => console.log(item, i));
+```
 ## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
-`.map()` will take an array, and produce a new array with new values. In a function you define what each value in the array should be based on an existing item.
+`.map()` will take an array and produce a new array with new values. In a function, you define what each value in the array should be based on an existing item.
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
@@ -54,9 +110,29 @@ const wordsWrappedInX = words.map((word) => {
 // wordsWrappedInX = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
 ```
 
+### Building JS .map from scratch
+
+```JS
+let numbers = [1,2,3,4,5];
+
+Array.prototype.mapper = function(callback){
+  let arr = [];
+  for(let i = 0; i < this.length; i++){
+    arr.push(callback(this[i], i, this));
+  }
+  return arr;
+}
+
+let biggerNumbers = numbers.mapper(item => item + 3);
+console.log(buggerNumbers);
+```
+
+As with the forEach method before our new custom map method, 'mapper' is not all that complex.
+
+
 ## [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
-`.filter()` will take an array, and produce a new array that only contains some of the items. Each item in the array runs through a function. If the function returns true, the item is included in the new array.
+`.filter()` will take an array and produce a new array that only contains some of the items. Each item in the array runs through a function. If the function returns true, the item is included in the new array.
 
 ```js
 const words = ['the', 'world', 'is', 'round', 'like', 'an', 'orange']
@@ -87,11 +163,11 @@ console.log(sum)
 // 15
 ```
 
-__NOTE__ The single value returned can be an object or array. Often in examples it's a number or string but you can return anything. Reduce is extremely powerful and all other iterators can be written using it. It's tough to wrap one's mind around so don't worry if this one is inscrutable for now. We'll revisit it now and again...and again and again.
+__NOTE__ The single value returned can be an object or array. Often in examples, it's a number or string, but you can return anything. Reduce is extremely powerful, and all other iterators can be written using it. It's tough to wrap one's mind around, so don't worry if this one is inscrutable for now. We'll revisit it now and again...and again and again.
 
 ### Method chaining & using declared functions
 
-- When using these array methods we can method chain. So instead of doing:
+- When using these array methods, we can method chain. So instead of doing:
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
@@ -147,6 +223,9 @@ console.log(result)
 ### Bonus Challenge
 
 Write your own `map` and `filter` using only `reduce` (i.e. no for loops)
+
+
+
 
 
 
