@@ -19,22 +19,6 @@ In JavaScript, functions are first-class citizens, which means we can pass funct
 
 A Higher-Order function is a function that receives a function as an argument or returns the function as output.
 
-*Examples*
-
-```JS
-// returns a function as output
-function prefixString(prefix){
-  return function(string){
-    return `${prefix}${string}`
-  }
-}
-
-let withDollarSign = prefixString('$');
-let jobApplication = prefixString('Netflix ')
-```
-
-The above example will take a prefix to a string and will return a function that allows us to prefix any string with the prefix that we provided.
-
 ```JS
 // accepts a function as an argument
 document.addEventListener('click', ()=> {
