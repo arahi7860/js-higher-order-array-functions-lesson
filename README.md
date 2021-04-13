@@ -57,22 +57,6 @@ numbers.forEach((element) => {
 })
 // 1 2 3 4 5
 ```
-
-### Building JS forEach from scratch
-
-Looking at the forEach() method, it may seem like a lot is going on behind the scenes, but in reality, the code is not all that complex.
-
-```JS
-let numbers = [1,2,3,4,5];
-
-Array.prototype.loop = function(callback){
-  for(let i = 0; i < this.length; i++){
-    callback(this[i], i, this);
-  }
-}
-
-numbers.loop((item, i) => console.log(item, i));
-```
 ## [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 `.map()` will take an array and produce a new array with new values. In a function, you define what each value in the array should be based on an existing item.
@@ -93,26 +77,6 @@ const wordsWrappedInX = words.map((word) => {
 })
 // wordsWrappedInX = [ 'xthex', 'xworldx', 'xisx', 'xroundx', 'xlikex', 'xanx', 'xorangex' ]
 ```
-
-### Building JS .map from scratch
-
-```JS
-let numbers = [1,2,3,4,5];
-
-Array.prototype.mapper = function(callback){
-  let arr = [];
-  for(let i = 0; i < this.length; i++){
-    arr.push(callback(this[i], i, this));
-  }
-  return arr;
-}
-
-let biggerNumbers = numbers.mapper(item => item + 3);
-console.log(buggerNumbers);
-```
-
-As with the forEach method before our new custom map method, 'mapper' is not all that complex.
-
 
 ## [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
