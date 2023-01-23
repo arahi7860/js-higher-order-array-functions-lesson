@@ -19,18 +19,7 @@ In JavaScript, functions are first-class citizens, which means we can pass funct
 
 A Higher-Order function is a function that receives a function as an argument or returns the function as output.
 
-```JS
-// accepts a function as an argument
-document.addEventListener('click', ()=> {
-  alert('Clicked This page!')
-});
-```
-
-Used very often in DOM manipulation, the addEventListener function takes an action to listen for as the first argument and a function for the second argument.
-
 You will use many different types of Higher Order Functions, but today, we will focus on the built-in Array callback methods.
-
-
 
 ## Review: [for loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)!
 
@@ -171,9 +160,4 @@ console.log(result)
 ### Bonus Challenge
 
 Write your own `map` and `filter` using only `reduce` (i.e. no for loops)
-
-
-
-
-
 
